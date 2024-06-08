@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/darkly/bootstrap.min.css">
+    <script src="./assets/js/script.js">defer</script>
 </head>
+
 <body>
-    
+    <from id="search-from" class="p-3">
+        <div>
+            <label for="search">City Name</label>
+            <input class="form-control" type="text" id="search" name="search" placeholder="Search" />
+            <label for="format">Choose an option</label>
+            <select class="form-control" id="format-options" name="format">
+                <option value="blank">--</option>
+                <option value="audio">Audio Recordings</option>
+                <option value="books">Books/Printed Material</option>
+                <option value="film-and-videos">Film, Videos</option>
+                <option value="legislation">Legislation</option>
+                <option value="manuscripts">Manuscripts/Mixed Material</option>
+                <option value="maps">Maps</option>
+                <option value="newspapers">Newspapers</option>
+                <option value="photos">Photo, Print, Drawing</option>
+                <option value="notated-music">Printed Music</option>
+                <option value="web-archives">Wev Archives</option>
+                </select>
+            <button class="btn btn-primary mb-3" type="submit">Submit</button>
+        </div>
+    </from>
 </body>
+
 </html>
