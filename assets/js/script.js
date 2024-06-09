@@ -1,6 +1,7 @@
 const qInput = document.querySelector('#q');
 const searchForm = document.querySelector('#search-form');
 const resultList = document.querySelector('#results');
+const recentSearch = document.querySelector('#recent-search');
 
 searchForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -23,7 +24,7 @@ searchForm.addEventListener('submit', function (event) {
                 const cardHumidityEl = document.createElement('p');
 
 
-                columnEl.className = 'col-12 card p-3 m-3';
+                columnEl.className = 'col card p-3 m-3 ';
                 cardDateEl.textContent = `${list.dt_txt}` 
                 //cardImgEl.textContent = ``
                 cardTempEl.textContent = `Temp: ${list.main.temp} `; 
@@ -38,15 +39,18 @@ searchForm.addEventListener('submit', function (event) {
                 resultList.appendChild(columnEl);
                 
             }
+            const recentBtnDiv = document.createElement('div');
+            const recentBtn = document.createElement('button')
+            recentBtn.className = 'btn btn-primary mb-3';
+            recentBtn.textContent = (qInput.value.trim());
+            recentBtnDiv.appendChild(recentBtn);
+            recentSearch.appendChild(recentBtnDiv);
 
-            for (let city of data.city) {
-                const cardHeaderEl = document.createElement('h2');
-                cardHeaderEl.textContent = `${city.name}`;
-                resultList.appendChild(cardHeaderEl);
-            }
         })
         .catch(function (err) {
             console.log(err);
         });
+
+
 });
 
