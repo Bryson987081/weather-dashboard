@@ -10,17 +10,17 @@
     <script src="./assets/js/script.js" defer></script>
 </head>
 
-<body class="row">
+<body class="row p-6">
     <form id="search-form" class="p-3 col-3 ">
         <div>
-            <label for="q">Search for a City</label>
-            <input class="form-control mb-3" type="text" id="q" name="q" placeholder="Search" />
+            <h1 class="mb-3 p-3" for="q">Search for a City</h1>
+            <input class="form-control m-3" type="text" id="q" name="q" placeholder="Search" />
         </div>
-        <button class="btn btn-success mb-3" type="submit">Submit</button>
+        <button class="btn btn-success m-3" type="submit">Submit</button>
     </form>
-    <label for="recent-search">Recent Searches</label>
-        <div class="col-4" id="recent-search">
-        </div>
+    <h2 class="mb-3 p-3" for="recent-search">Recent Searches</h2>
+    <div class="row" id="recent-search">
+    </div>
     <div id="results">
     </div>
 </body>

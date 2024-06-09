@@ -3,6 +3,7 @@ const searchForm = document.querySelector('#search-form');
 const resultList = document.querySelector('#results');
 const recentSearch = document.querySelector('#recent-search');
 
+
 searchForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -19,29 +20,32 @@ searchForm.addEventListener('submit', function (event) {
             for (let list of data.list) {
                 const columnEl = document.createElement('div');
                 const cardDateEl = document.createElement('p');
+                const cardImgEl = document.createElement('a');
                 const cardTempEl = document.createElement('p');
                 const cardWindEl = document.createElement('p');
                 const cardHumidityEl = document.createElement('p');
 
 
-                columnEl.className = 'col card p-3 m-3 ';
-                cardDateEl.textContent = `${list.dt_txt}` 
-                //cardImgEl.textContent = ``
-                cardTempEl.textContent = `Temp: ${list.main.temp} `; 
-                cardWindEl.textContent = `Wind: ${list.wind.speed}`; 
-                cardHumidityEl.textContent = `Humidity: ${list.main.humidity}`; 
-        
+                columnEl.className = 'col card m-3 p-4';
+                cardDateEl.textContent = `${list.dt_txt}`;
+                cardImgEl.textContent = `https://openweathermap.org/img/wn/'${list.weather.icon}'@2x.png`;
+                cardTempEl.textContent = `Temp: ${list.main.temp} `;
+                cardWindEl.textContent = `Wind: ${list.wind.speed}`;
+                cardHumidityEl.textContent = `Humidity: ${list.main.humidity}`;
+
                 columnEl.appendChild(cardDateEl);
-                //columnEl.appendChild(cardImgEl);
+                columnEl.appendChild(cardImgEl);
                 columnEl.appendChild(cardTempEl);
                 columnEl.appendChild(cardWindEl);
                 columnEl.appendChild(cardHumidityEl);
                 resultList.appendChild(columnEl);
-                
+
             }
+            
             const recentBtnDiv = document.createElement('div');
             const recentBtn = document.createElement('button')
-            recentBtn.className = 'btn btn-primary mb-3';
+            recentBtn.className = 'btn btn-primary col-2 m-3 p-2';
+            recentBtn.type = 'submit';
             recentBtn.textContent = (qInput.value.trim());
             recentBtnDiv.appendChild(recentBtn);
             recentSearch.appendChild(recentBtnDiv);
@@ -51,6 +55,17 @@ searchForm.addEventListener('submit', function (event) {
             console.log(err);
         });
 
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-});
+            const cardColumn = document.getElementById('results');
+            const cards = cardColumn.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.remove();
+            })
+        })
 
+
+        });
+        
+       
