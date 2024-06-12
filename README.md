@@ -7,7 +7,9 @@ This challange required me to make a weather dashboard allowing the user to sear
 ## This was done by
 
 -Taking user inputs from a form and adding them to a fetch request
+
 -Using the api to select which list items we need to display
+
 -Then finnaly appending data to html elemnts using javaScript
 
 ## Screenshot
