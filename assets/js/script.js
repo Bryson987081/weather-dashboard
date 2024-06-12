@@ -6,12 +6,12 @@ const recentSearch = document.querySelector('#recent-search');
 
 
 const createCard = function () {
-
+    
     const q = qInput.value.trim();
-
+    
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + q + '&appid=3c5908744bd76026f872444cdb7a76b6&units=imperial')
-        .then(function (response) {
-            return response.json();
+    .then(function (response) {
+        return response.json();
         })
         .then(function (data) {
             console.log('Search');
@@ -49,7 +49,7 @@ const createCard = function () {
 
             const recentBtnDiv = document.createElement('div');
             const recentBtn = document.createElement('button')
-            recentBtn.className = 'btn btn-primary col-2 m-3 p-2';
+            recentBtn.className = 'btn btn-primary col m-3 p-2';
             recentBtn.type = 'submit';
             recentBtn.textContent = (qInput.value.trim());
             recentBtnDiv.appendChild(recentBtn);
