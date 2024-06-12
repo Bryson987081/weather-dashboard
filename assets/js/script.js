@@ -30,7 +30,7 @@ const createCard = function () {
                 const cardHumidityEl = document.createElement('p');
                 const icon = `${list.weather[0].icon}`;
 
-                columnEl.className = 'p-3 m-3 md-4';
+                columnEl.className = ' card p-3 m-3 md-4';
                 cardImgEl.className = "icon col-3";
                 cardDateEl.textContent = dayjs(list.dt_txt).format('MM/DD/YYYY');
                 cardImgEl.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
